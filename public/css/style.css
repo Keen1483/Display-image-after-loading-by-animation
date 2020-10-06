@@ -1,0 +1,75 @@
+@keyframes loading {
+  0% {
+    background: transparent url("./../images/loading.gif") center no-repeat;
+  }
+  100% {
+    background: transparent url("./../images/loading.gif") center no-repeat;
+  }
+}
+@keyframes bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  17% {
+    transform: scaleX(0.18);
+  }
+  24% {
+    transform: scaleX(0.4);
+  }
+  46% {
+    transform: scaleX(0.81);
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes image {
+  from {
+    opacity: 0;
+    transform: scale(0) translateX(-180px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+.progress {
+  position: relative;
+  top: 20vh;
+  left: 30vw;
+  width: 40vw;
+  height: 60vh;
+  border: 2px solid gray;
+  animation: loading 400ms;
+}
+.progress::before {
+  content: "";
+  position: absolute;
+  top: 49%;
+  left: 25%;
+  width: 50%;
+  height: 2%;
+  border: 2px solid #15dea5;
+  background: #15dea5;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: bar 400ms 400ms ease-in-out;
+}
+.progress::after {
+  content: "";
+  position: absolute;
+  background: transparent url("../images/nicki.jfif") center no-repeat;
+  top: 18%;
+  left: 35%;
+  width: 180px;
+  height: 290px;
+  border: 2px solid gray;
+  opacity: 0;
+  animation: image 400ms 800ms ease-in-out both;
+}
+
+/*# sourceMappingURL=style.css.map */
